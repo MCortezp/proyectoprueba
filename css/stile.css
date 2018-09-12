@@ -1,0 +1,387 @@
+body{
+
+	padding: 0;
+	background:#e6e6e6;
+}
+
+
+header, .main{
+
+background:#fff;
+	width:100%;
+	max-width:100%;
+	
+			
+}
+
+
+
+#ListaArticulos li{
+	border:groove;
+	display: block;
+	float: left;
+	height: 210px;
+	list-style: none;
+	width: 200px;
+    margin-left: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-right: 0;
+	text-align: center;
+	word-wrap: break-word;
+	border-radius: 13px;
+	background:rgba(195,213,251,0.51);
+	cursor: pointer;
+}
+
+
+#ImgCar{
+	
+	width: 80px;
+	height: 80px;	
+}
+
+#ImgArt{
+	margin: 10px;
+	width: 100px;
+	height: 100px;
+	
+}
+
+
+/*******Footer donde se soltara el articulo********/
+
+#carrito{
+	background:rgba(250,188,98,0.68);
+	position:fixed;
+	right: 1em;
+	bottom: 1em;
+	height: 70px;
+    width: 70px;
+	z-index: 100;
+	transition: all .5s;	
+	
+	color:#fff;
+	clear:both;
+   	text-align:center;
+    background-image: url(../Imagenes/car.png);
+	background-size: 35px;
+	background-repeat:no-repeat;
+	background-position: center;
+	border-radius: 20px;
+	cursor: pointer;
+	
+}
+
+#carrito a{
+     	position: absolute;
+        display: block;
+        height: 100%;
+        width: 100%;
+}
+
+#carrito:hover {
+	
+
+	height: 80%;
+    width: 200px;
+	
+}
+
+
+
+/**************************VENTANA MODAL******************************/
+.Vmodal{
+	background: rgba(0,0,0,0.70);
+	position: fixed;
+	left: 100em;
+	top: 0;
+	width: 30%;
+	height: 100vh;	
+	z-index: 100;
+	transition: all .5s;
+	
+}
+
+.Pmodal{
+	color: #fff;
+	width: 70%;
+	font-size: 1.4em;
+	text-align: center;
+	position: sticky;
+	left: 15%;
+	top: 50%;
+	margin: 0;
+	
+}
+
+/****************Diseno de botones*******************/
+
+#lab_abrir_modal{
+	display: table;
+	line-height: 3;
+	padding: 0;
+	text-transform: uppercase;
+	background: #024959;
+	margin:auto;
+	color: #fff;
+	cursor: pointer;
+	width: 100%;
+	text-align: center;
+	
+
+	
+}
+
+
+#lab_cerrar_modal{
+	position: fixed;
+	bottom: 1em;
+	left: 13%;
+	z-index: 150;
+	color: #FFF;
+	padding: 0.5em;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 20px;
+	background: red;
+}
+
+/**********************ELEMENTOS OCULTOS************************/
+
+#cerrar-modal{
+	display: none;
+}
+
+#lab_cerrar_modal{
+	display: none;
+}
+
+#abrir-modal{
+	display: none;
+}
+
+#carrito{
+	display: block;
+}
+
+/************************ACCIONES CHECKET DE BOTONES*******************************/
+
+
+
+
+#cerrar-modal:checked ~ #Vmodal{
+	left: -100em;
+}
+
+
+#cerrar-modal:checked ~ #lab_cerrar_modal{
+	display: none;
+}
+
+#cerrar-modal:checked ~ #carrito{
+	left:  -100em;
+}
+
+ #abrir-modal:checked ~ #Vmodal{
+	left: 0;
+}
+
+
+ #abrir-modal:checked ~ #lab_cerrar_modal{
+	display: block;
+}
+
+
+
+/**************************MENU DESPLEGABLE*********************************/
+
+.menu ul {
+		display: block;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+	.menu a {
+		display: block;
+		padding: 1em;
+		background-color: #024959;
+		text-decoration: none;
+		color: #FFF;
+	}
+	.menu a:hover {
+		background-color: #CC673B;
+	}
+	.menu ul li ul {
+		display: none;
+	}
+	.menu ul li a:hover + ul, .menu ul li ul:hover {
+		display: block;
+	}
+
+
+/* BARRA DE TITULO DE PAGINA */
+
+    .NAV0 {
+	margin-bottom:10px;
+	background:#528fd5;
+
+}
+
+
+
+/* BARRA DE NAVEGACION PARA RESOLUCION WEB */
+
+    .NAV1 {
+	margin-bottom:20px;
+	background:#024959;
+    position: sticky;
+    top: 0;
+	width:100%;
+
+	
+}
+
+ 
+	.menu_movil {
+		display:block;
+		width:100%;
+		background:#024959;
+		float: left;
+		
+	
+	}
+
+
+/*************************Tabla de Carrito de compra******************************/
+
+
+#status {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#status td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#status tr:nth-child(even)
+{
+	background-color: #f2f2f2;
+}
+
+#status tr:hover
+{
+	background-color: #ddd;
+}
+
+#status th {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+#BTNT{	
+	width: 15%;
+	padding: 2px;
+}
+
+
+#TotalFoo {
+		text-decoration: none;
+		color: #FFF;
+}
+
+/**************************************************/
+
+#BotonEl{
+    text-decoration: none;
+    
+    font-family: arial;
+	font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 10px;
+    color: white;
+    background-color: #9b0e0e;
+	border: none;
+	border-radius: 13px;
+  }
+  #BotonEl:hover{
+    color: white;
+    background-color: #bc6355;
+    text-decoration: none;
+  }
+
+
+#BotonMod{
+    text-decoration: none; 
+	font-weight: bold;
+    font-family: arial;
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 10px;
+    color: white;
+    background-color: blue;
+	border: none;
+	border-radius: 13px;
+  }
+  #BotonMod:hover{
+    color: white;
+    background-color: #3879ED;
+    text-decoration: none;
+  }
+
+
+/*********************************************************************/
+
+@media screen and (max-width:600px ) {
+	
+/**************************VENTANA MODAL******************************/
+.Vmodal{
+	top: -100em;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#cerrar-modal:checked ~ #Vmodal{
+	top: -100em;
+}
+
+
+ #abrir-modal:checked ~ #Vmodal{
+	top: 0;
+}
+	
+	
+#lab_cerrar_modal{
+	left: 40%;
+
+}
+	
+
+#lab_cerrar_modal{
+	position: fixed;
+	bottom: 10%;
+	left: 45%;
+	z-index: 150;
+	color: #FFF;
+	padding: 0.5em;
+	font-size: 1.5em;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 20px;
+	background: red;
+}
+	
+}
+
+
+
+

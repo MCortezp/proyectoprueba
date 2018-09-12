@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/stile.css"/>
+	<script src="JavaScript/jquery-1.12.4.js"></script>
+	  <script src="JavaScript/jquery-ui.js"></script>
+	<script type="text/javascript" src="JavaScript/DD.js"></script>
+
+<title>Documento sin título</title>
+</head>
+
+  <body>
+	<header class="NAV0" Id="NAV0"> 
+		   <h1> <center> Tienda </center> </h1>
+	    </header>  
+		
+		 <header class="NAV1"  Id="NAV1"> 
+		  <div class="menu_movil">
+			<input type="radio" name="modal" id="abrir-modal">
+		    <label for="abrir-modal" id="lab_abrir_modal">Menu</label>
+			<input type="radio" name="modal" id="cerrar-modal" >
+		    <label for="cerrar-modal" id="lab_cerrar_modal"> X </label>
+		   <!-- ************************************ -->
+		   <div class="Vmodal" id="Vmodal">
+		   <p class="Pmodal">
+			   
+        <nav class="menu">
+			<ul>
+				<li><a href="index.html"><span class="icon"></span>Inicio</a></li>
+				<li><a href="Productos.html"><span class="icon"></span>Productor</a></li>
+				<li><a href="ConfirmacionCompra.html"><span class="icon"></span>Carrito</a></li>
+			</ul>
+		</nav>
+			   
+			   </p>
+		   </div>
+		  </div>
+ 
+		
+	    </header>  
+	  
+ <section class="main">
+
+
+
+      <section class="Articulos">
+      <script type="text/javascript">
+		
+         var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+         var msg;
+
+         db.transaction(function (tx) {
+               tx.executeSql('SELECT * FROM ARTICULOS', [], function (tx, results) {
+               var len = results.rows.length, i;
+               
+
+					
+               for (i = 0; i < len; i++){
+                  msg = "<tr><td width: 5%>"+ results.rows.item(i).ID + "</td><td>" + results.rows.item(i).NomPro + "</td><td>Q"+ results.rows.item(i).Precio + "</td><td>" + results.rows.item(i).Cantidad + "</td><td id='BTNT'> <button id='BotonEl' onclick='FunEliminar("+results.rows.item(i).ID+")'>X</button> <button id='BotonMod' onclick='FunModificar("+results.rows.item(i).ID+")'>Modificar</button> </td></tr>";
+                  document.querySelector('#status').innerHTML += msg;
+               }
+            }, null);
+         });
+			
+		  
+  
+      </script>
+		
+		  
+<table id="status" name="status" >
+	<tr bgcolor="#CCCCCC">
+	  <td>ID</td>
+      <td>Producto</td>
+      <td>Precio</td>
+      <td>Cantidad</td>
+	  <td>Opciones</td>
+    
+</tr>
+</table>	  
+      </section>
+
+	</section>
+	
+  </body>
+</html>
+
